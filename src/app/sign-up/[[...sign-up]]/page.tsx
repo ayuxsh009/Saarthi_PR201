@@ -53,7 +53,7 @@ export default function Page() {
               transition={{ delay: 0.6 }}
               className="mt-8 text-center text-gray-500 text-sm"
             >
-              <p>Already have an account? <a href="/sign-in" className="text-blue-600 hover:underline">Sign in</a></p>
+            
             </motion.div>
           </motion.div>
         </div>
