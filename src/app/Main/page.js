@@ -233,78 +233,73 @@ const Dashboard = () => {
             </div>
             <div className="flex space-x-6">
               <button
-                onClick={() => openModal("/contact")}
+                onClick={() => openModal("/contact_us")}
                 className="text-sm font-medium hover:text-blue-600 transition-colors"
               >
                 Contact
               </button>
               <button
-                onClick={() => openModal("/privacy")}
+                onClick={() => openModal("/privacy_policy")}
                 className="text-sm font-medium hover:text-blue-600 transition-colors"
               >
                 Privacy Policy
               </button>
-              <button
-                onClick={() => openModal("/terms")}
-                className="text-sm font-medium hover:text-blue-600 transition-colors"
-              >
-                Terms
-              </button>
+              
             </div>
           </div>
         </div>
       </motion.footer>
 
-      {/* Modal */}
-      <AnimatePresence>
-        {modalUrl && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm z-50 p-4"
+    {/* Modal */}
+<AnimatePresence>
+  {modalUrl && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm z-50 p-4"
+    >
+      <motion.div
+        initial={{ scale: 0.95, y: 20 }}
+        animate={{ scale: 1, y: 0 }}
+        exit={{ scale: 0.95, y: 20 }}
+        className="bg-white rounded-xl shadow-2xl w-full max-w-4xl h-[90vh] flex flex-col"
+      >
+        <div className="flex justify-between items-center border-b border-gray-200 p-4">
+          <h3 className="text-lg font-semibold text-gray-800">
+            {modalUrl.replace("/", "").replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+          </h3>
+          <button
+            onClick={closeModal}
+            className="p-1 rounded-full hover:bg-gray-100 transition-colors"
           >
-            <motion.div
-              initial={{ scale: 0.95, y: 20 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.95, y: 20 }}
-              className="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
-              <div className="flex justify-between items-center border-b border-gray-200 p-4">
-                <h3 className="text-lg font-semibold text-gray-800">
-                  {modalUrl.replace("/", "").charAt(0).toUpperCase() +
-                    modalUrl.replace("/", "").slice(1)}
-                </h3>
-                <button
-                  onClick={closeModal}
-                  className="p-1 rounded-full hover:bg-gray-100 transition-colors"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M18 6L6 18M6 6l12 12"></path>
-                  </svg>
-                </button>
-              </div>
-              <div className="flex-1 overflow-hidden">
-                <iframe
-                  src={modalUrl}
-                  className="w-full h-full border-none"
-                  loading="lazy"
-                />
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              <path d="M18 6L6 18M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div className="flex-1 overflow-hidden">
+          <iframe
+            src={modalUrl}
+            className="w-full h-full min-h-[500px] border-none"
+            loading="lazy"
+            style={{ minHeight: '75vh' }}
+          />
+        </div>
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
     </div>
   );
 };
