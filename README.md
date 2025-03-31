@@ -15,12 +15,15 @@ A platform dedicated to educating and empowering rural children through engaging
 ## Screenshots  
 
 ### Front Page  
-![Front Page](image-4.png)  
-![Section View](image-5.png)  
-![Interactive Section](image-2.png)  
+![Front Page](image-9.png) 
+![Section View](image-10.png)  
+![Interactive Section](image-11.png)  
+![End](image-12.png)
 
 ### About Page  
-![About Page](image-3.png)  
+![About Page](image-13.png) 
+![](image-14.png)
+![](image-15.png)
 
 ### Login Page
 ![Login](image-6.png)
@@ -28,7 +31,7 @@ A platform dedicated to educating and empowering rural children through engaging
 ![Signup](image-7.png)
 
 ### DashBoard
-![Dashboard](image-8.png)
+![Dashboard](image-16.png)
 ---
 
 
