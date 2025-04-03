@@ -23,7 +23,7 @@ const Body = () => {
   const images = [
     "/main.png",
     "/main2.png",
-    "/main3.png",
+    "/main3.jpg",
     "/main4.png"
   ];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);

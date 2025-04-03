@@ -9,12 +9,11 @@ export async function POST(req) {
       return NextResponse.json({ error: "All fields are required" }, { status: 400 });
     }
 
-    // Configure Nodemailer transporter
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.EMAIL_USER, // Your email
-        pass: process.env.EMAIL_PASS, // Your app password
+        user: process.env.EMAIL_USER, 
+        pass: process.env.EMAIL_PASS, 
       },
     });
 
@@ -26,7 +25,6 @@ export async function POST(req) {
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     };
 
-    // Send email
     await transporter.sendMail(mailOptions);
 
     return NextResponse.json({ success: "Message sent successfully!" }, { status: 200 });
