@@ -68,7 +68,7 @@ const Dashboard = () => {
     {
       name: "Mentor Meet Booking",
       icon: Copy,
-      link: "/mentor-meet-booking",
+      link: "https://saarthi-mentor-meet-booking.vercel.app/app",
       color: "from-indigo-500 to-purple-600",
       description: "Schedule sessions with expert mentors",
     },
