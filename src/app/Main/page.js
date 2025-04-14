@@ -10,8 +10,6 @@ import {
   LineChart,
   Users,
   Copy,
-  BookOpen,
-  MessageCircle,
   ChevronRight,
 } from "lucide-react";
 import { UserButton } from "@clerk/nextjs";
@@ -59,25 +57,11 @@ const Dashboard = () => {
       description: "Practice interviews with AI feedback",
     },
     {
-      name: "AI ChatBot",
-      icon: MessageCircle,
-      link: "/ai-chatbot",
-      color: "from-red-500 to-pink-600",
-      description: "Get instant answers to your learning questions",
-    },
-    {
       name: "Mentor Meet Booking",
       icon: Copy,
       link: "https://saarthi-mentor-meet-booking.vercel.app/app",
       color: "from-indigo-500 to-purple-600",
       description: "Schedule sessions with expert mentors",
-    },
-    {
-      name: "E-Library",
-      icon: BookOpen,
-      link: "/e-library",
-      color: "from-blue-400 to-cyan-600",
-      description: "Access a vast collection of learning resources",
     },
     {
       name: "Discuss",
@@ -166,12 +150,12 @@ const Dashboard = () => {
             </p>
           </motion.div>
 
-          {/* Module Grid */}
+          {/* Module Grid - 3x3 Layout */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center"
           >
             {modules.map((module, index) => (
               <motion.div
@@ -180,6 +164,7 @@ const Dashboard = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2 + index * 0.1 }}
                 whileHover={{ y: -5 }}
+                className="w-full max-w-xs"
               >
                 <Link
                   href={module.link}
@@ -244,62 +229,61 @@ const Dashboard = () => {
               >
                 Privacy Policy
               </button>
-              
             </div>
           </div>
         </div>
       </motion.footer>
 
-    {/* Modal */}
-<AnimatePresence>
-  {modalUrl && (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm z-50 p-4"
-    >
-      <motion.div
-        initial={{ scale: 0.95, y: 20 }}
-        animate={{ scale: 1, y: 0 }}
-        exit={{ scale: 0.95, y: 20 }}
-        className="bg-white rounded-xl shadow-2xl w-full max-w-4xl h-[90vh] flex flex-col"
-      >
-        <div className="flex justify-between items-center border-b border-gray-200 p-4">
-          <h3 className="text-lg font-semibold text-gray-800">
-            {modalUrl.replace("/", "").replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-          </h3>
-          <button
-            onClick={closeModal}
-            className="p-1 rounded-full hover:bg-gray-100 transition-colors"
+      {/* Modal */}
+      <AnimatePresence>
+        {modalUrl && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm z-50 p-4"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+            <motion.div
+              initial={{ scale: 0.95, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.95, y: 20 }}
+              className="bg-white rounded-xl shadow-2xl w-full max-w-4xl h-[90vh] flex flex-col"
             >
-              <path d="M18 6L6 18M6 6l12 12"></path>
-            </svg>
-          </button>
-        </div>
-        <div className="flex-1 overflow-hidden">
-          <iframe
-            src={modalUrl}
-            className="w-full h-full min-h-[500px] border-none"
-            loading="lazy"
-            style={{ minHeight: '75vh' }}
-          />
-        </div>
-      </motion.div>
-    </motion.div>
-  )}
-</AnimatePresence>
+              <div className="flex justify-between items-center border-b border-gray-200 p-4">
+                <h3 className="text-lg font-semibold text-gray-800">
+                  {modalUrl.replace("/", "").replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                </h3>
+                <button
+                  onClick={closeModal}
+                  className="p-1 rounded-full hover:bg-gray-100 transition-colors"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M18 6L6 18M6 6l12 12"></path>
+                  </svg>
+                </button>
+              </div>
+              <div className="flex-1 overflow-hidden">
+                <iframe
+                  src={modalUrl}
+                  className="w-full h-full min-h-[500px] border-none"
+                  loading="lazy"
+                  style={{ minHeight: '75vh' }}
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
