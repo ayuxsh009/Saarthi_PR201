@@ -54,7 +54,7 @@ const Dashboard = () => {
     {
       name: "AI Mock Interview",
       icon: LineChart,
-      link: "https://ai-mock-interview-platform-peach.vercel.app/dashboard",
+      link: "https://ai-mock-interview-app-with-git-06b29f-adititiwari0810s-projects.vercel.app/dashboard",
       color: "from-yellow-500 to-orange-600",
       description: "Practice interviews with AI feedback",
     },
