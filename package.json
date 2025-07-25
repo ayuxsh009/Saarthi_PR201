@@ -9,11 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ai-sdk/react": "^1.2.12",
     "@clerk/nextjs": "^6.10.3",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "ai": "^4.3.19",
     "framer-motion": "^11.18.1",
     "lucide-react": "^0.474.0",
     "next": "15.1.5",

@@ -111,7 +111,7 @@ const Body = () => {
                 transition={{ duration: 0.8, delay: 0.8 }}
                 className="flex flex-col sm:flex-row justify-center gap-4"
               >
-                <Link href="/sign-up" passHref>
+                <Link href="/sign-in" passHref>
                   <motion.button
                     whileHover={{ y: -2, boxShadow: "0 8px 25px -5px rgba(236, 201, 75, 0.4)" }}
                     whileTap={{ scale: 0.98 }}
