@@ -66,7 +66,7 @@ const Dashboard = () => {
     {
       name: "Discuss",
       icon: Users,
-      link: "/Eassy",
+      link: "https://chat-cyan-six-92.vercel.app/",
       color: "from-emerald-500 to-green-600",
       description: "Join discussions with peers and experts",
     },
