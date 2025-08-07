@@ -45,7 +45,7 @@ const Dashboard = () => {
     {
       name: "AI Exam Prep",
       icon: GraduationCap,
-      link: "https://ai-exam-prep-seven.vercel.app/sign-in",
+      link: "https://ai-exam-prep-seven.vercel.app/dashboard",
       color: "from-green-500 to-teal-600",
       description: "Prepare for exams with AI-powered practice tests",
     },
